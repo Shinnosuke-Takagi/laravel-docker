@@ -41,5 +41,14 @@ services:
       - MYSQL_PASSWORD=${DB_PASS}
       - MYSQL_ROOT_PASSWORD=${DB_PASS}
       - TZ=${TZ}
+  node:
+    image: node:lts-alpine
+    working_dir: /work
+    command: ["npm", "run", "watch-poll"]
+    volumes:
+      - npm-cache:/root/.mpm
+      - ./src:/work
 volumes:
   db-store:
+  npm-cache:
+    driver: local
