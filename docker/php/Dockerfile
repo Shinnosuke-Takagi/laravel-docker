@@ -18,5 +18,4 @@ RUN set -eux && \
     --with-png-dir=/usr/include/ && \
   docker-php-ext-install bcmath pdo_mysql gd && \
   curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer && \
-  composer config -g repos.packagist composer https://packagist.jp && \
-  composer global require hirak/prestissimo
+  composer config -g repos.packagist composer https://packagist.jp 
